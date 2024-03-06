@@ -17,12 +17,12 @@ namespace Kütüp_otamasyon2.model
         public int kitapadet { get; set; }
         public  int kitapsayfasayisi { get; set; }
         public int kitapbasimyili { get; set; }
-        /*
+        
         public Kitap()
         {
             
         }
-        */
+        
         public Kitap(int _kitapid, string _kitapisism, string _kitapyazar, string _kitapdili, string _kitapyayinevi, string _kitaptür, int _kitapadet, int _kitapsayfasayisi, int _kitapbasimyili)
         {
             this.kitapid = _kitapid;    

@@ -57,7 +57,7 @@ namespace Kütüp_otamasyon2
                 }
                 else if(kullanici.ToLower() == kisi.getkullaniciadi() && sifre.ToLower() == kisi.getsifre() && kisi.getyetki() == "uye")
                 {
-                    uye uyesayfası = new uye();
+                    uye uyesayfası = new uye(kitaplarım);
                     uyesayfası.Show();
                     this.Hide();
                     kontrol = true;
@@ -97,6 +97,11 @@ namespace Kütüp_otamasyon2
 
 
 
+        }
+
+        private void button_kapat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

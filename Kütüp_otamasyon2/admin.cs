@@ -112,6 +112,46 @@ namespace Kütüp_otamasyon2
         {
 
         }
+
+        private void button_ara_Click(object sender, EventArgs e)
+        {
+            kisi hedefkisi = null;
+
+            int secilenkisiID=Convert.ToInt32(textBox_ara.Text);
+
+            foreach(kisi kisi in kisilerim)
+            {
+                if(kisi.getId()==secilenkisiID)
+                {
+                    hedefkisi=kisi;
+
+                    break;
+
+                }
+            }
+
+            dataGridView1.Rows.Clear();
+            dataGridView1.Rows.Add(hedefkisi.getId(), hedefkisi.getIsim(), hedefkisi.getsoyisim(), hedefkisi.getsoyisim(), hedefkisi.getolusturmatarihi(), hedefkisi.getkullaniciadi(), hedefkisi.getsifre(),hedefkisi.getyetki()); 
+
+        }
+
+
+
+        private void button_yenile_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+
+            foreach(kisi hedefkisi in kisilerim)
+            {
+                dataGridView1.Rows.Add(hedefkisi.getId(), hedefkisi.getIsim(), hedefkisi.getsoyisim(), hedefkisi.getsoyisim(), hedefkisi.getolusturmatarihi(), hedefkisi.getkullaniciadi(), hedefkisi.getsifre(), hedefkisi.getyetki());
+            }
+
+
+
+
+
+
+        }
         //**************************************************************************************************
 
         //kitap işlemleri kısmı.............................................................................
@@ -202,6 +242,53 @@ namespace Kütüp_otamasyon2
                 }
             }
         }
+
+        private void button_kitapara_Click(object sender, EventArgs e)
+        {
+            Kitap hedefkitap = null;
+
+            int secilenkitapID=Convert.ToInt32(textBox_kitapara.Text);
+
+            foreach (Kitap kitap in kitaplarim)
+            {
+                if (kitap.getkitapid() == secilenkitapID)
+                {
+                    hedefkitap = kitap;
+
+                    break;
+
+                }
+            }
+            dataGridView2.Rows.Clear();
+            dataGridView2.Rows.Add(hedefkitap.getkitapid(), hedefkitap.getkitapisim(), hedefkitap.getkitapyazar(), hedefkitap.getkitapdili(), hedefkitap.getkitapyayinevi(), hedefkitap.getkitaptür(),hedefkitap.getkitapadet(),hedefkitap.getkitapsayfasayisi(),hedefkitap.getkitapbasimyili());
+
+
+        }
+
+        private void button_kitapyenile_Click(object sender, EventArgs e)
+        {
+            dataGridView2.Rows.Remove(dataGridView2.CurrentRow);
+
+            foreach(Kitap hedefkitap in kitaplarim)
+            {
+                dataGridView2.Rows.Add(hedefkitap.getkitapid(), hedefkitap.getkitapisim(), hedefkitap.getkitapyazar(), hedefkitap.getkitapdili(), hedefkitap.getkitapyayinevi(), hedefkitap.getkitaptür(), hedefkitap.getkitapadet(), hedefkitap.getkitapsayfasayisi(), hedefkitap.getkitapbasimyili());
+
+            }
+
+
+
+        }
+
+        private void button_cikis_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            this.Hide();
+            form1.Show();
+        }
+
+
+
+
 
         //**************************************************************************************************
 

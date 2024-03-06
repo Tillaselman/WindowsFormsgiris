@@ -35,6 +35,7 @@
             this.textBox_sfr = new System.Windows.Forms.TextBox();
             this.button_giris = new System.Windows.Forms.Button();
             this.button_Temizle = new System.Windows.Forms.Button();
+            this.button_kapat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,11 +108,25 @@
             this.button_Temizle.UseVisualStyleBackColor = true;
             this.button_Temizle.Click += new System.EventHandler(this.button_Temizle_Click);
             // 
+            // button_kapat
+            // 
+            this.button_kapat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_kapat.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button_kapat.ForeColor = System.Drawing.Color.Cornsilk;
+            this.button_kapat.Location = new System.Drawing.Point(471, 214);
+            this.button_kapat.Name = "button_kapat";
+            this.button_kapat.Size = new System.Drawing.Size(171, 40);
+            this.button_kapat.TabIndex = 4;
+            this.button_kapat.Text = "App\'i Kapa";
+            this.button_kapat.UseVisualStyleBackColor = false;
+            this.button_kapat.Click += new System.EventHandler(this.button_kapat_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 266);
+            this.Controls.Add(this.button_kapat);
             this.Controls.Add(this.button_Temizle);
             this.Controls.Add(this.button_giris);
             this.Controls.Add(this.textBox_sfr);
@@ -139,6 +154,7 @@
         private System.Windows.Forms.TextBox textBox_sfr;
         private System.Windows.Forms.Button button_giris;
         private System.Windows.Forms.Button button_Temizle;
+        private System.Windows.Forms.Button button_kapat;
     }
 }
 
