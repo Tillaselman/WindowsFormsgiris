@@ -15,8 +15,11 @@ namespace Kütüp_otamasyon2
     {
         List<kisi> kisilerim=new List<kisi>();
         List<Kitap> kitaplarım=new List<Kitap>();
+        List<uyeler> uyelerim=new List<uyeler>();
 
 
+        uyeler uye = new uyeler();
+        uyelerEntities db = new uyelerEntities();
 
 
         public Form1()
@@ -37,24 +40,65 @@ namespace Kütüp_otamasyon2
 
         private void button_giris_Click(object sender, EventArgs e)
         {
+
+            string username = textBox_Kullanici.Text;
+            string password = textBox_sfr.Text;
+
+            using (var db = new uyelerEntities())
+            {
+
+                var admin = db.uyeler.FirstOrDefault(a => a.uye_kullaniciadi.ToLower() == username && a.uye_sifre == password && a.uye_yetki.ToLower() == "admin");
+                var uye   = db.uyeler.FirstOrDefault(a => a.uye_kullaniciadi.ToLower() == username && a.uye_sifre == password && a.uye_yetki.ToLower() == "üye");
+                if (admin != null)
+                {
+                  
+                   admin adminsayfası = new admin(uyelerim);
+                    adminsayfası.Show();
+                    this.Hide();
+                }
+                else if(uye != null)
+                {
+                    uye uyesayfası = new uye(kitaplarım);
+                    uyesayfası.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Hatalı Giriş. Tekrar Deneyin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+
+
+
+
+
+
+
+            /*
             string kullanici,sifre= "";
 
             kullanici = textBox_Kullanici.Text;
             sifre = textBox_sfr.Text;
 
+
             bool kontrol = false;
 
-            foreach(kisi kisi in kisilerim)
+            foreach(uyeler uyeler in uyelerim)
             {
-                if(kullanici.ToLower()==kisi.getkullaniciadi() && sifre.ToLower()==kisi.getsifre()&& kisi.getyetki()=="admin")
-                {
-                    admin adminsayfası = new admin(kisilerim , kitaplarım);
+                if (/*(kullanici.ToLower()==kisi.getkullaniciadi() && sifre.ToLower()==kisi.getsifre()&& kisi.getyetki()=="admin")||*/ // kullanici.ToLower() == uye.uye_kullaniciadi && sifre.ToLower() == uye.uye_sifre && uye.uye_yetki == "admin")
+            {
+                /*
+                    admin adminsayfası = new admin(uyelerim);
                     adminsayfası.Show();
                     this.Hide();
 
                     kontrol = true;
                     break;
+                */
                 }
+                /*
                 else if(kullanici.ToLower() == kisi.getkullaniciadi() && sifre.ToLower() == kisi.getsifre() && kisi.getyetki() == "uye")
                 {
                     uye uyesayfası = new uye(kitaplarım);
@@ -63,7 +107,7 @@ namespace Kütüp_otamasyon2
                     kontrol = true;
                     break;
                 }
-                
+               
 
 
 
@@ -73,13 +117,14 @@ namespace Kütüp_otamasyon2
             {
                 MessageBox.Show("hatalı giris", "ERROR", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
-
+            */
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            /*
             //üye ve adminlerin listesi
-            kisilerim.Add(new kisi(1,"selman", "yozoğlu",DateTime.Now,"tilla","1","admin"));
+            kisilerim.Add(new kisi(1,"selman", "yozoğlu",DateTime.Now,"tilla","12","admin"));
             kisilerim.Add(new kisi(2, "mustafa", "özkapıcı", DateTime.Now, "anıl", "123", "uye"));
             kisilerim.Add(new kisi(3, "enes", "çatalkaya", DateTime.Now, "enes", "12", "uye"));
             kisilerim.Add(new kisi(4, "bayram", "irioğlu", DateTime.Now, "furkan", "1234", "uye"));
@@ -91,7 +136,7 @@ namespace Kütüp_otamasyon2
             kitaplarım.Add(new Kitap(3, "uçurtma avcısı", "khaled hosseini", "ingilizce", "everest yayıcılık", "roman", 100, 350, 2010));
             kitaplarım.Add(new Kitap(4, "küçük prens", "antoine de saint_exupery", "ingilizce", "can çocuk yayınları", "roman", 100, 60, 2018));
             kitaplarım.Add(new Kitap(5, "kürk mantolu madonna", "sabahattin ali", "türkçe", "yapıkredi yayınları", "roman", 150 ,220, 2015));
-
+            */
 
 
 

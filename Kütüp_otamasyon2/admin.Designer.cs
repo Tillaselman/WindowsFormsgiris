@@ -49,32 +49,21 @@
             this.button_temizle = new System.Windows.Forms.Button();
             this.maskedTextBox_olusturmatarihi = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox_ara = new System.Windows.Forms.TextBox();
+            this.button_ara = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.İD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.İSİM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SOYİSİM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OLUŞTURMATARİHİ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KULLANİCİ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SİFRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.YETKİ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.kitapid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kitapisim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kitapyazar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kitapdili = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Kitapyayinevi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kitaptur = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kitapadet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Kitapsayfasayisi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kitapbasimyili = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox_kitapbasimyili = new System.Windows.Forms.TextBox();
+            this.button_cikis = new System.Windows.Forms.Button();
+            this.textBox_kitapara = new System.Windows.Forms.TextBox();
+            this.button_kitapara = new System.Windows.Forms.Button();
             this.label_kitaplar = new System.Windows.Forms.Label();
             this.button_Kitaptemizle = new System.Windows.Forms.Button();
             this.button_güncelle = new System.Windows.Forms.Button();
             this.button_kitapsil = new System.Windows.Forms.Button();
             this.button_kitapekle = new System.Windows.Forms.Button();
             this.textBox_kitapid = new System.Windows.Forms.TextBox();
-            this.maskedTextBox_kitapbasimyili = new System.Windows.Forms.MaskedTextBox();
             this.label_kitapbasimyili = new System.Windows.Forms.Label();
             this.label_kitapsayfasayisi = new System.Windows.Forms.Label();
             this.label_kitapadet = new System.Windows.Forms.Label();
@@ -91,13 +80,6 @@
             this.textBox_yayınevi = new System.Windows.Forms.TextBox();
             this.textBox_kitapyazar = new System.Windows.Forms.TextBox();
             this.textBox_kitapisim = new System.Windows.Forms.TextBox();
-            this.button_ara = new System.Windows.Forms.Button();
-            this.button_yenile = new System.Windows.Forms.Button();
-            this.textBox_ara = new System.Windows.Forms.TextBox();
-            this.button_kitapara = new System.Windows.Forms.Button();
-            this.button_kitapyenile = new System.Windows.Forms.Button();
-            this.textBox_kitapara = new System.Windows.Forms.TextBox();
-            this.button_cikis = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -272,7 +254,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBox_ara);
-            this.groupBox1.Controls.Add(this.button_yenile);
             this.groupBox1.Controls.Add(this.button_ara);
             this.groupBox1.Controls.Add(this.maskedTextBox_olusturmatarihi);
             this.groupBox1.Controls.Add(this.label_uyeler);
@@ -304,17 +285,26 @@
             this.groupBox1.Text = "Üye İşlemleri";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // textBox_ara
+            // 
+            this.textBox_ara.Location = new System.Drawing.Point(6, 441);
+            this.textBox_ara.Name = "textBox_ara";
+            this.textBox_ara.Size = new System.Drawing.Size(155, 30);
+            this.textBox_ara.TabIndex = 6;
+            // 
+            // button_ara
+            // 
+            this.button_ara.Location = new System.Drawing.Point(6, 396);
+            this.button_ara.Name = "button_ara";
+            this.button_ara.Size = new System.Drawing.Size(75, 39);
+            this.button_ara.TabIndex = 4;
+            this.button_ara.Text = "Ara";
+            this.button_ara.UseVisualStyleBackColor = true;
+            this.button_ara.Click += new System.EventHandler(this.button_ara_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.İD,
-            this.İSİM,
-            this.SOYİSİM,
-            this.OLUŞTURMATARİHİ,
-            this.KULLANİCİ,
-            this.SİFRE,
-            this.YETKİ});
             this.dataGridView1.Location = new System.Drawing.Point(6, 509);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -325,69 +315,19 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // İD
-            // 
-            this.İD.HeaderText = "İD";
-            this.İD.MinimumWidth = 6;
-            this.İD.Name = "İD";
-            this.İD.Width = 125;
-            // 
-            // İSİM
-            // 
-            this.İSİM.HeaderText = "İSİM";
-            this.İSİM.MinimumWidth = 6;
-            this.İSİM.Name = "İSİM";
-            this.İSİM.Width = 125;
-            // 
-            // SOYİSİM
-            // 
-            this.SOYİSİM.HeaderText = "SOYİSİM";
-            this.SOYİSİM.MinimumWidth = 6;
-            this.SOYİSİM.Name = "SOYİSİM";
-            this.SOYİSİM.Width = 125;
-            // 
-            // OLUŞTURMATARİHİ
-            // 
-            this.OLUŞTURMATARİHİ.HeaderText = "OLUŞTURMATARİHİ";
-            this.OLUŞTURMATARİHİ.MinimumWidth = 6;
-            this.OLUŞTURMATARİHİ.Name = "OLUŞTURMATARİHİ";
-            this.OLUŞTURMATARİHİ.Width = 125;
-            // 
-            // KULLANİCİ
-            // 
-            this.KULLANİCİ.HeaderText = "KULLANICI";
-            this.KULLANİCİ.MinimumWidth = 6;
-            this.KULLANİCİ.Name = "KULLANİCİ";
-            this.KULLANİCİ.Width = 125;
-            // 
-            // SİFRE
-            // 
-            this.SİFRE.HeaderText = "ŞİFRE";
-            this.SİFRE.MinimumWidth = 6;
-            this.SİFRE.Name = "SİFRE";
-            this.SİFRE.Width = 125;
-            // 
-            // YETKİ
-            // 
-            this.YETKİ.HeaderText = "YETKİ";
-            this.YETKİ.MinimumWidth = 6;
-            this.YETKİ.Name = "YETKİ";
-            this.YETKİ.Width = 125;
-            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Controls.Add(this.textBox_kitapbasimyili);
             this.groupBox2.Controls.Add(this.button_cikis);
             this.groupBox2.Controls.Add(this.textBox_kitapara);
-            this.groupBox2.Controls.Add(this.button_kitapyenile);
             this.groupBox2.Controls.Add(this.button_kitapara);
-            this.groupBox2.Controls.Add(this.dataGridView2);
             this.groupBox2.Controls.Add(this.label_kitaplar);
             this.groupBox2.Controls.Add(this.button_Kitaptemizle);
             this.groupBox2.Controls.Add(this.button_güncelle);
             this.groupBox2.Controls.Add(this.button_kitapsil);
             this.groupBox2.Controls.Add(this.button_kitapekle);
             this.groupBox2.Controls.Add(this.textBox_kitapid);
-            this.groupBox2.Controls.Add(this.maskedTextBox_kitapbasimyili);
             this.groupBox2.Controls.Add(this.label_kitapbasimyili);
             this.groupBox2.Controls.Add(this.label_kitapsayfasayisi);
             this.groupBox2.Controls.Add(this.label_kitapadet);
@@ -405,9 +345,9 @@
             this.groupBox2.Controls.Add(this.textBox_kitapyazar);
             this.groupBox2.Controls.Add(this.textBox_kitapisim);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox2.Location = new System.Drawing.Point(509, 23);
+            this.groupBox2.Location = new System.Drawing.Point(509, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(654, 745);
+            this.groupBox2.Size = new System.Drawing.Size(654, 756);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kitap İşlemleri";
@@ -416,93 +356,55 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.kitapid,
-            this.kitapisim,
-            this.kitapyazar,
-            this.kitapdili,
-            this.Kitapyayinevi,
-            this.kitaptur,
-            this.kitapadet,
-            this.Kitapsayfasayisi,
-            this.kitapbasimyili});
-            this.dataGridView2.Location = new System.Drawing.Point(6, 498);
+            this.dataGridView2.Location = new System.Drawing.Point(6, 508);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(642, 241);
-            this.dataGridView2.TabIndex = 6;
-            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            this.dataGridView2.Size = new System.Drawing.Size(648, 242);
+            this.dataGridView2.TabIndex = 11;
             // 
-            // kitapid
+            // textBox_kitapbasimyili
             // 
-            this.kitapid.HeaderText = "Kitap İd :";
-            this.kitapid.MinimumWidth = 6;
-            this.kitapid.Name = "kitapid";
-            this.kitapid.Width = 125;
+            this.textBox_kitapbasimyili.Location = new System.Drawing.Point(206, 325);
+            this.textBox_kitapbasimyili.Name = "textBox_kitapbasimyili";
+            this.textBox_kitapbasimyili.Size = new System.Drawing.Size(303, 30);
+            this.textBox_kitapbasimyili.TabIndex = 10;
             // 
-            // kitapisim
+            // button_cikis
             // 
-            this.kitapisim.HeaderText = "Kitap İsim :";
-            this.kitapisim.MinimumWidth = 6;
-            this.kitapisim.Name = "kitapisim";
-            this.kitapisim.Width = 125;
+            this.button_cikis.BackColor = System.Drawing.Color.Red;
+            this.button_cikis.ForeColor = System.Drawing.SystemColors.Control;
+            this.button_cikis.Location = new System.Drawing.Point(562, 32);
+            this.button_cikis.Name = "button_cikis";
+            this.button_cikis.Size = new System.Drawing.Size(75, 35);
+            this.button_cikis.TabIndex = 9;
+            this.button_cikis.Text = "Çıkış";
+            this.button_cikis.UseVisualStyleBackColor = false;
+            this.button_cikis.Click += new System.EventHandler(this.button_cikis_Click);
             // 
-            // kitapyazar
+            // textBox_kitapara
             // 
-            this.kitapyazar.HeaderText = "Kitap Yazar :";
-            this.kitapyazar.MinimumWidth = 6;
-            this.kitapyazar.Name = "kitapyazar";
-            this.kitapyazar.Width = 125;
+            this.textBox_kitapara.Location = new System.Drawing.Point(231, 468);
+            this.textBox_kitapara.Multiline = true;
+            this.textBox_kitapara.Name = "textBox_kitapara";
+            this.textBox_kitapara.Size = new System.Drawing.Size(209, 33);
+            this.textBox_kitapara.TabIndex = 8;
             // 
-            // kitapdili
+            // button_kitapara
             // 
-            this.kitapdili.HeaderText = "Kitap Dili :";
-            this.kitapdili.MinimumWidth = 6;
-            this.kitapdili.Name = "kitapdili";
-            this.kitapdili.Width = 125;
-            // 
-            // Kitapyayinevi
-            // 
-            this.Kitapyayinevi.HeaderText = "Kitap Yayınevi :";
-            this.Kitapyayinevi.MinimumWidth = 6;
-            this.Kitapyayinevi.Name = "Kitapyayinevi";
-            this.Kitapyayinevi.Width = 125;
-            // 
-            // kitaptur
-            // 
-            this.kitaptur.HeaderText = "Kitap Tür :";
-            this.kitaptur.MinimumWidth = 6;
-            this.kitaptur.Name = "kitaptur";
-            this.kitaptur.Width = 125;
-            // 
-            // kitapadet
-            // 
-            this.kitapadet.HeaderText = "Kitap Adet :";
-            this.kitapadet.MinimumWidth = 6;
-            this.kitapadet.Name = "kitapadet";
-            this.kitapadet.Width = 125;
-            // 
-            // Kitapsayfasayisi
-            // 
-            this.Kitapsayfasayisi.HeaderText = "Kitap Sayfa Sayısı :";
-            this.Kitapsayfasayisi.MinimumWidth = 6;
-            this.Kitapsayfasayisi.Name = "Kitapsayfasayisi";
-            this.Kitapsayfasayisi.Width = 125;
-            // 
-            // kitapbasimyili
-            // 
-            this.kitapbasimyili.HeaderText = "Kitap Basım Yılı :";
-            this.kitapbasimyili.MinimumWidth = 6;
-            this.kitapbasimyili.Name = "kitapbasimyili";
-            this.kitapbasimyili.Width = 125;
+            this.button_kitapara.Location = new System.Drawing.Point(136, 464);
+            this.button_kitapara.Name = "button_kitapara";
+            this.button_kitapara.Size = new System.Drawing.Size(89, 38);
+            this.button_kitapara.TabIndex = 7;
+            this.button_kitapara.Text = "ARA";
+            this.button_kitapara.UseVisualStyleBackColor = true;
+            this.button_kitapara.Click += new System.EventHandler(this.button_kitapara_Click);
             // 
             // label_kitaplar
             // 
             this.label_kitaplar.AutoSize = true;
             this.label_kitaplar.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label_kitaplar.Location = new System.Drawing.Point(11, 464);
+            this.label_kitaplar.Location = new System.Drawing.Point(11, 474);
             this.label_kitaplar.Name = "label_kitaplar";
             this.label_kitaplar.Size = new System.Drawing.Size(119, 31);
             this.label_kitaplar.TabIndex = 1;
@@ -511,7 +413,7 @@
             // 
             // button_Kitaptemizle
             // 
-            this.button_Kitaptemizle.Location = new System.Drawing.Point(334, 401);
+            this.button_Kitaptemizle.Location = new System.Drawing.Point(334, 406);
             this.button_Kitaptemizle.Name = "button_Kitaptemizle";
             this.button_Kitaptemizle.Size = new System.Drawing.Size(303, 39);
             this.button_Kitaptemizle.TabIndex = 5;
@@ -521,7 +423,7 @@
             // 
             // button_güncelle
             // 
-            this.button_güncelle.Location = new System.Drawing.Point(16, 401);
+            this.button_güncelle.Location = new System.Drawing.Point(16, 406);
             this.button_güncelle.Name = "button_güncelle";
             this.button_güncelle.Size = new System.Drawing.Size(303, 39);
             this.button_güncelle.TabIndex = 5;
@@ -531,7 +433,7 @@
             // 
             // button_kitapsil
             // 
-            this.button_kitapsil.Location = new System.Drawing.Point(334, 356);
+            this.button_kitapsil.Location = new System.Drawing.Point(334, 361);
             this.button_kitapsil.Name = "button_kitapsil";
             this.button_kitapsil.Size = new System.Drawing.Size(303, 39);
             this.button_kitapsil.TabIndex = 5;
@@ -541,7 +443,7 @@
             // 
             // button_kitapekle
             // 
-            this.button_kitapekle.Location = new System.Drawing.Point(16, 356);
+            this.button_kitapekle.Location = new System.Drawing.Point(16, 361);
             this.button_kitapekle.Name = "button_kitapekle";
             this.button_kitapekle.Size = new System.Drawing.Size(303, 39);
             this.button_kitapekle.TabIndex = 5;
@@ -551,23 +453,15 @@
             // 
             // textBox_kitapid
             // 
-            this.textBox_kitapid.Location = new System.Drawing.Point(206, 29);
+            this.textBox_kitapid.Location = new System.Drawing.Point(206, 34);
             this.textBox_kitapid.Name = "textBox_kitapid";
             this.textBox_kitapid.Size = new System.Drawing.Size(303, 30);
             this.textBox_kitapid.TabIndex = 4;
             // 
-            // maskedTextBox_kitapbasimyili
-            // 
-            this.maskedTextBox_kitapbasimyili.Location = new System.Drawing.Point(206, 317);
-            this.maskedTextBox_kitapbasimyili.Mask = "0000";
-            this.maskedTextBox_kitapbasimyili.Name = "maskedTextBox_kitapbasimyili";
-            this.maskedTextBox_kitapbasimyili.Size = new System.Drawing.Size(303, 30);
-            this.maskedTextBox_kitapbasimyili.TabIndex = 2;
-            // 
             // label_kitapbasimyili
             // 
             this.label_kitapbasimyili.AutoSize = true;
-            this.label_kitapbasimyili.Location = new System.Drawing.Point(30, 320);
+            this.label_kitapbasimyili.Location = new System.Drawing.Point(30, 325);
             this.label_kitapbasimyili.Name = "label_kitapbasimyili";
             this.label_kitapbasimyili.Size = new System.Drawing.Size(158, 24);
             this.label_kitapbasimyili.TabIndex = 0;
@@ -576,7 +470,7 @@
             // label_kitapsayfasayisi
             // 
             this.label_kitapsayfasayisi.AutoSize = true;
-            this.label_kitapsayfasayisi.Location = new System.Drawing.Point(13, 285);
+            this.label_kitapsayfasayisi.Location = new System.Drawing.Point(13, 290);
             this.label_kitapsayfasayisi.Name = "label_kitapsayfasayisi";
             this.label_kitapsayfasayisi.Size = new System.Drawing.Size(175, 24);
             this.label_kitapsayfasayisi.TabIndex = 0;
@@ -585,7 +479,7 @@
             // label_kitapadet
             // 
             this.label_kitapadet.AutoSize = true;
-            this.label_kitapadet.Location = new System.Drawing.Point(72, 248);
+            this.label_kitapadet.Location = new System.Drawing.Point(72, 253);
             this.label_kitapadet.Name = "label_kitapadet";
             this.label_kitapadet.Size = new System.Drawing.Size(116, 24);
             this.label_kitapadet.TabIndex = 0;
@@ -594,7 +488,7 @@
             // label_kitaptur
             // 
             this.label_kitaptur.AutoSize = true;
-            this.label_kitaptur.Location = new System.Drawing.Point(73, 212);
+            this.label_kitaptur.Location = new System.Drawing.Point(73, 217);
             this.label_kitaptur.Name = "label_kitaptur";
             this.label_kitaptur.Size = new System.Drawing.Size(115, 24);
             this.label_kitaptur.TabIndex = 0;
@@ -603,7 +497,7 @@
             // label_kitapyayinevi
             // 
             this.label_kitapyayinevi.AutoSize = true;
-            this.label_kitapyayinevi.Location = new System.Drawing.Point(41, 176);
+            this.label_kitapyayinevi.Location = new System.Drawing.Point(41, 181);
             this.label_kitapyayinevi.Name = "label_kitapyayinevi";
             this.label_kitapyayinevi.Size = new System.Drawing.Size(147, 24);
             this.label_kitapyayinevi.TabIndex = 0;
@@ -612,7 +506,7 @@
             // label_kitapdili
             // 
             this.label_kitapdili.AutoSize = true;
-            this.label_kitapdili.Location = new System.Drawing.Point(85, 135);
+            this.label_kitapdili.Location = new System.Drawing.Point(85, 140);
             this.label_kitapdili.Name = "label_kitapdili";
             this.label_kitapdili.Size = new System.Drawing.Size(103, 24);
             this.label_kitapdili.TabIndex = 0;
@@ -621,7 +515,7 @@
             // label_kitapyazar
             // 
             this.label_kitapyazar.AutoSize = true;
-            this.label_kitapyazar.Location = new System.Drawing.Point(66, 99);
+            this.label_kitapyazar.Location = new System.Drawing.Point(66, 104);
             this.label_kitapyazar.Name = "label_kitapyazar";
             this.label_kitapyazar.Size = new System.Drawing.Size(122, 24);
             this.label_kitapyazar.TabIndex = 0;
@@ -630,7 +524,7 @@
             // label_kitapisim
             // 
             this.label_kitapisim.AutoSize = true;
-            this.label_kitapisim.Location = new System.Drawing.Point(77, 65);
+            this.label_kitapisim.Location = new System.Drawing.Point(77, 70);
             this.label_kitapisim.Name = "label_kitapisim";
             this.label_kitapisim.Size = new System.Drawing.Size(111, 24);
             this.label_kitapisim.TabIndex = 0;
@@ -639,7 +533,7 @@
             // label_kitapid
             // 
             this.label_kitapid.AutoSize = true;
-            this.label_kitapid.Location = new System.Drawing.Point(96, 35);
+            this.label_kitapid.Location = new System.Drawing.Point(96, 40);
             this.label_kitapid.Name = "label_kitapid";
             this.label_kitapid.Size = new System.Drawing.Size(92, 24);
             this.label_kitapid.TabIndex = 0;
@@ -647,119 +541,52 @@
             // 
             // textBox_kitapsayfasayisi
             // 
-            this.textBox_kitapsayfasayisi.Location = new System.Drawing.Point(206, 281);
+            this.textBox_kitapsayfasayisi.Location = new System.Drawing.Point(206, 286);
             this.textBox_kitapsayfasayisi.Name = "textBox_kitapsayfasayisi";
             this.textBox_kitapsayfasayisi.Size = new System.Drawing.Size(303, 30);
             this.textBox_kitapsayfasayisi.TabIndex = 1;
             // 
             // textBox_kitapadet
             // 
-            this.textBox_kitapadet.Location = new System.Drawing.Point(206, 245);
+            this.textBox_kitapadet.Location = new System.Drawing.Point(206, 250);
             this.textBox_kitapadet.Name = "textBox_kitapadet";
             this.textBox_kitapadet.Size = new System.Drawing.Size(303, 30);
             this.textBox_kitapadet.TabIndex = 1;
             // 
             // textBox_kitaptürü
             // 
-            this.textBox_kitaptürü.Location = new System.Drawing.Point(206, 209);
+            this.textBox_kitaptürü.Location = new System.Drawing.Point(206, 214);
             this.textBox_kitaptürü.Name = "textBox_kitaptürü";
             this.textBox_kitaptürü.Size = new System.Drawing.Size(303, 30);
             this.textBox_kitaptürü.TabIndex = 1;
             // 
             // textBox_kitapdili
             // 
-            this.textBox_kitapdili.Location = new System.Drawing.Point(206, 137);
+            this.textBox_kitapdili.Location = new System.Drawing.Point(206, 142);
             this.textBox_kitapdili.Name = "textBox_kitapdili";
             this.textBox_kitapdili.Size = new System.Drawing.Size(303, 30);
             this.textBox_kitapdili.TabIndex = 1;
             // 
             // textBox_yayınevi
             // 
-            this.textBox_yayınevi.Location = new System.Drawing.Point(206, 173);
+            this.textBox_yayınevi.Location = new System.Drawing.Point(206, 178);
             this.textBox_yayınevi.Name = "textBox_yayınevi";
             this.textBox_yayınevi.Size = new System.Drawing.Size(303, 30);
             this.textBox_yayınevi.TabIndex = 1;
             // 
             // textBox_kitapyazar
             // 
-            this.textBox_kitapyazar.Location = new System.Drawing.Point(206, 101);
+            this.textBox_kitapyazar.Location = new System.Drawing.Point(206, 106);
             this.textBox_kitapyazar.Name = "textBox_kitapyazar";
             this.textBox_kitapyazar.Size = new System.Drawing.Size(303, 30);
             this.textBox_kitapyazar.TabIndex = 1;
             // 
             // textBox_kitapisim
             // 
-            this.textBox_kitapisim.Location = new System.Drawing.Point(206, 65);
+            this.textBox_kitapisim.Location = new System.Drawing.Point(206, 70);
             this.textBox_kitapisim.Name = "textBox_kitapisim";
             this.textBox_kitapisim.Size = new System.Drawing.Size(303, 30);
             this.textBox_kitapisim.TabIndex = 1;
-            // 
-            // button_ara
-            // 
-            this.button_ara.Location = new System.Drawing.Point(6, 396);
-            this.button_ara.Name = "button_ara";
-            this.button_ara.Size = new System.Drawing.Size(75, 39);
-            this.button_ara.TabIndex = 4;
-            this.button_ara.Text = "Ara";
-            this.button_ara.UseVisualStyleBackColor = true;
-            this.button_ara.Click += new System.EventHandler(this.button_ara_Click);
-            // 
-            // button_yenile
-            // 
-            this.button_yenile.Location = new System.Drawing.Point(85, 396);
-            this.button_yenile.Name = "button_yenile";
-            this.button_yenile.Size = new System.Drawing.Size(75, 39);
-            this.button_yenile.TabIndex = 5;
-            this.button_yenile.Text = "yenile";
-            this.button_yenile.UseVisualStyleBackColor = true;
-            this.button_yenile.Click += new System.EventHandler(this.button_yenile_Click);
-            // 
-            // textBox_ara
-            // 
-            this.textBox_ara.Location = new System.Drawing.Point(6, 441);
-            this.textBox_ara.Name = "textBox_ara";
-            this.textBox_ara.Size = new System.Drawing.Size(155, 30);
-            this.textBox_ara.TabIndex = 6;
-            // 
-            // button_kitapara
-            // 
-            this.button_kitapara.Location = new System.Drawing.Point(136, 454);
-            this.button_kitapara.Name = "button_kitapara";
-            this.button_kitapara.Size = new System.Drawing.Size(89, 38);
-            this.button_kitapara.TabIndex = 7;
-            this.button_kitapara.Text = "ARA";
-            this.button_kitapara.UseVisualStyleBackColor = true;
-            this.button_kitapara.Click += new System.EventHandler(this.button_kitapara_Click);
-            // 
-            // button_kitapyenile
-            // 
-            this.button_kitapyenile.Location = new System.Drawing.Point(446, 457);
-            this.button_kitapyenile.Name = "button_kitapyenile";
-            this.button_kitapyenile.Size = new System.Drawing.Size(83, 35);
-            this.button_kitapyenile.TabIndex = 7;
-            this.button_kitapyenile.Text = "YENİLE";
-            this.button_kitapyenile.UseVisualStyleBackColor = true;
-            this.button_kitapyenile.Click += new System.EventHandler(this.button_kitapyenile_Click);
-            // 
-            // textBox_kitapara
-            // 
-            this.textBox_kitapara.Location = new System.Drawing.Point(231, 458);
-            this.textBox_kitapara.Multiline = true;
-            this.textBox_kitapara.Name = "textBox_kitapara";
-            this.textBox_kitapara.Size = new System.Drawing.Size(209, 33);
-            this.textBox_kitapara.TabIndex = 8;
-            // 
-            // button_cikis
-            // 
-            this.button_cikis.BackColor = System.Drawing.Color.Red;
-            this.button_cikis.ForeColor = System.Drawing.SystemColors.Control;
-            this.button_cikis.Location = new System.Drawing.Point(562, 27);
-            this.button_cikis.Name = "button_cikis";
-            this.button_cikis.Size = new System.Drawing.Size(75, 35);
-            this.button_cikis.TabIndex = 9;
-            this.button_cikis.Text = "Çıkış";
-            this.button_cikis.UseVisualStyleBackColor = false;
-            this.button_cikis.Click += new System.EventHandler(this.button_cikis_Click);
             // 
             // admin
             // 
@@ -806,13 +633,6 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox_olusturmatarihi;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn İD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn İSİM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SOYİSİM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OLUŞTURMATARİHİ;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KULLANİCİ;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SİFRE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn YETKİ;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label_kitapid;
         private System.Windows.Forms.Label label_kitapbasimyili;
@@ -831,28 +651,26 @@
         private System.Windows.Forms.TextBox textBox_kitapyazar;
         private System.Windows.Forms.TextBox textBox_kitapisim;
         private System.Windows.Forms.TextBox textBox_kitapid;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox_kitapbasimyili;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label_kitaplar;
         private System.Windows.Forms.Button button_Kitaptemizle;
         private System.Windows.Forms.Button button_güncelle;
         private System.Windows.Forms.Button button_kitapsil;
         private System.Windows.Forms.Button button_kitapekle;
+        private System.Windows.Forms.TextBox textBox_ara;
+        private System.Windows.Forms.Button button_ara;
+        private System.Windows.Forms.TextBox textBox_kitapara;
+        private System.Windows.Forms.Button button_kitapara;
+        private System.Windows.Forms.Button button_cikis;
+        private System.Windows.Forms.TextBox textBox_kitapbasimyili;
+        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn kitapid;
         private System.Windows.Forms.DataGridViewTextBoxColumn kitapisim;
         private System.Windows.Forms.DataGridViewTextBoxColumn kitapyazar;
         private System.Windows.Forms.DataGridViewTextBoxColumn kitapdili;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Kitapyayinevi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kitapyayinevi;
         private System.Windows.Forms.DataGridViewTextBoxColumn kitaptur;
         private System.Windows.Forms.DataGridViewTextBoxColumn kitapadet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Kitapsayfasayisi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kitapsayfasayisi;
         private System.Windows.Forms.DataGridViewTextBoxColumn kitapbasimyili;
-        private System.Windows.Forms.TextBox textBox_ara;
-        private System.Windows.Forms.Button button_yenile;
-        private System.Windows.Forms.Button button_ara;
-        private System.Windows.Forms.TextBox textBox_kitapara;
-        private System.Windows.Forms.Button button_kitapyenile;
-        private System.Windows.Forms.Button button_kitapara;
-        private System.Windows.Forms.Button button_cikis;
     }
 }

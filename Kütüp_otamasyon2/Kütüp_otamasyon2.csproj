@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,6 +70,42 @@
     <Compile Include="kitap.cs" />
     <Compile Include="model\kisi.cs" />
     <Compile Include="model\Kitap.cs" />
+    <Compile Include="model\kitaplarim.cs">
+      <DependentUpon>server_SQL_kitaplar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model\SERVER_SQL.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SERVER_SQL.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model\SERVER_SQL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SERVER_SQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model\SERVER_SQL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SERVER_SQL.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="model\server_SQL_kitaplar.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>server_SQL_kitaplar.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model\server_SQL_kitaplar.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>server_SQL_kitaplar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model\server_SQL_kitaplar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>server_SQL_kitaplar.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="model\uyeler.cs">
+      <DependentUpon>SERVER_SQL.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="uye.cs">
@@ -88,6 +133,21 @@
     <EmbeddedResource Include="uye.resx">
       <DependentUpon>uye.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="model\SERVER_SQL.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SERVER_SQL.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="model\SERVER_SQL.edmx.diagram">
+      <DependentUpon>SERVER_SQL.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="model\server_SQL_kitaplar.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>server_SQL_kitaplar.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="model\server_SQL_kitaplar.edmx.diagram">
+      <DependentUpon>server_SQL_kitaplar.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -103,6 +163,31 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="model\SERVER_SQL.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SERVER_SQL.Context.cs</LastGenOutput>
+      <DependentUpon>SERVER_SQL.edmx</DependentUpon>
+    </Content>
+    <Content Include="model\SERVER_SQL.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SERVER_SQL.edmx</DependentUpon>
+      <LastGenOutput>SERVER_SQL.cs</LastGenOutput>
+    </Content>
+    <Content Include="model\server_SQL_kitaplar.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>server_SQL_kitaplar.edmx</DependentUpon>
+      <LastGenOutput>server_SQL_kitaplar.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="model\server_SQL_kitaplar.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>server_SQL_kitaplar.edmx</DependentUpon>
+      <LastGenOutput>server_SQL_kitaplar.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
